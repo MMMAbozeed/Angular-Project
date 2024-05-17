@@ -6,7 +6,8 @@ import { Product } from '../../models/Prodoct';
   providedIn: 'root'
 })
 export class ProductsService {
-  DB_URL = 'https://fakestoreapi.com/products';
+  // DB_URL = 'https://fakestoreapi.com/products';
+  DB_URL = 'http://localhost:3000/products';
   constructor(private http: HttpClient) { }
 
   GetAllProducts() {
