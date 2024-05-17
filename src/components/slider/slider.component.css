@@ -1,0 +1,16 @@
+img{
+  height: 400px;
+  width: 500px;
+  margin: auto;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  border-radius: 50%;
+  background-color: black;
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+.carousel-indicators{
+  bottom: -50px;
+}
