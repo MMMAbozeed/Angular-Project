@@ -1,0 +1,74 @@
+
+.auth {
+    background: -webkit-linear-gradient(top, #fff, #fff, #E9F1FF, #E9F1FF, #E9F1FF, #FFF5F8);
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #070707;
+    font-size: 1rem;
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+.auth button {
+    background: #006769;
+    border: 2px solid #006769;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all .5s ease;
+    padding: .2rem .5rem;
+}
+
+.auth button:hover {
+    background: transparent !important;
+    color: #006769 !important;
+}
+
+.card {
+    background: #fff;
+    width: 80%;
+    margin: auto;
+    max-width: 500px;
+    min-height: 220px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 1rem;
+    padding-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card > h5 {
+    text-align: start;
+    color: #006769;
+    font-size: 16px;
+}
+
+form {
+    width: 95%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+form .form-group input {
+    margin-bottom: 1rem;
+    background: var(--gray);
+    padding:.5rem ;
+    outline: none;
+}
+
+form button {
+    margin-top: 1.2rem;
+}

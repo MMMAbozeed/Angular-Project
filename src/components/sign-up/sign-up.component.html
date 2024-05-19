@@ -1,1 +1,29 @@
-<p>sign-up works!</p>
+
+    <article class="auth">
+        <section class="card user_card" id="user_card">
+            <h5 class="text-muted">We are pleased with your communication, visit, and desire to benefit from our services, we hope to meet your expectations.</h5>
+            <h5>Please, fill this fields</h5>
+            @if(clicked){
+              @if (isValid) {
+              <div class="alert alert-success m-5">
+                data is valid
+              </div>
+            }@else {
+              <div class="alert alert-danger m-5">
+                data is not valid
+              </div>
+            }
+          }
+            <form [formGroup]="signUp">
+                <div class="form-group pt-2">
+                    <input [(ngModel)]="name" formControlName="name" type="text" class="form-control" placeholder="Full name" />
+                    <input [(ngModel)]="email" formControlName="email" type="email" class="form-control" placeholder="email" />
+                    <input [(ngModel)]="password" formControlName="password" type="password" class="form-control" placeholder="Password" />
+                    <input [(ngModel)]="phone" formControlName="phone" type="text" class="form-control" placeholder="Phone number" />
+                    <input [(ngModel)]="address" formControlName="address" type="text" class="form-control" placeholder="Address" />
+                    <input [(ngModel)]="imgUrl" formControlName="imgUrl" type="text" class="form-control" placeholder="user image Url" />
+                </div>
+                <button (click)="validation()" type="submit" name="submit" class="btn regBtn">Register</button>
+            </form>
+        </section>
+    </article>

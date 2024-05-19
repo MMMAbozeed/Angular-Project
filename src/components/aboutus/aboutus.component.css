@@ -1,0 +1,35 @@
+.aboutUsContainer{
+    width: 100%;
+}
+.aboutUsContainer h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #006769;
+}
+.aboutUsContainer section{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 3rem;
+}
+.aboutUsContainer section img{
+    width: 100%;
+    border-radius: 20px;
+}
+.aboutUsContainer section aside{
+    width: 50%;
+}
+.aboutUsContainer section .left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+.left span{
+    color: #006769;
+}
+.left span span{
+    font-style: italic;
+    font-weight: 700;
+    color: #E6FF94;
+}

@@ -1,0 +1,19 @@
+
+.card{
+  width: 300px;
+}
+.link-muted {
+   color: #aaa;
+  }
+.link-muted:hover {
+  color: #1266f1;
+}
+svg{
+  width: 50px;
+}
+.bi-heart-fill{
+  color:  red;
+}
+.bi-cart-plus-fill,.bi-chat-dots-fill{
+  color: green;
+}

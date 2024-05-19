@@ -1,0 +1,66 @@
+.error-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+  }
+  
+  .error-container {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .error-code {
+    font-size: 10rem;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+    margin-top: -20px;
+  }
+  
+  .animations {
+    margin-top: 20px;
+  }
+  
+  .plug, .cursor, .warning {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-color: #00ffab;
+    display: inline-block;
+  }
+  
+  .plug::before {
+    content: '';
+    width: 10px;
+    height: 30px;
+    background: #00ffab;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    display: block;
+  }
+  
+  .cursor {
+    border: 2px solid #fff;
+    transform: rotate(45deg);
+  }
+  
+  .warning {
+    border: 2px solid #fff;
+    position: relative;
+  }
+  
+  .warning::before {
+    content: '!';
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+  }
+  

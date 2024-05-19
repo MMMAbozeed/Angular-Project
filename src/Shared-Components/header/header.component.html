@@ -1,27 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" routerLink="/">K<span>S</span>tore</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li *ngIf="isLogged" class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact Us</a>
+        <li *ngIf="isLogged" class="nav-item">
+          <a class="nav-link" routerLink="/setting" >setting</a>
         </li>
+        <li *ngIf="isLogged" class="nav-item">
+          <a (click)="logOut()" class="nav-link"  tabindex="-1" aria-disabled="true">log out</a>
+        </li>
+        <div *ngIf="isLogged" class="avatar d-flex align-items-center">
+          <h6 class="mx-5">{{userSession.username}}</h6>
+          <img src="{{(imgUrl)?imgUrl:'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp'}}" alt="avatar" width="65" height="65" class="rounded-circle shadow-1-strong me-3">
+        </div>
       </ul>
-      <form class="d-flex">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Select Category</option>
-          <option value="1">Laptops</option>
-          <option value="2">Phones</option>
-          <option value="3">watches</option>
-          <option value="4">AirPods</option>
-        </select>
-      </form>
     </div>
   </div>
 </nav>
