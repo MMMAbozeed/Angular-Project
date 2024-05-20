@@ -2,18 +2,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommentsService } from '../../services/comment/comments.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Comments } from '../../interfaces/comments';
 import { ProductsService } from '../../services/products/products.service';
 import { WordsPipe } from '../../pipes/words.pipe';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommentsComponent } from '../comments/comments.component';
+import { CartService } from '../../services/cart/cart.service';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
   imports: [HttpClientModule,CommonModule,WordsPipe,FormsModule,CommentsComponent,ReactiveFormsModule],
-  providers: [CommentsService,ProductsService],
+  providers: [CommentsService,ProductsService,CartService],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css',
 })
@@ -26,11 +27,29 @@ export class ProductDetailsComponent implements OnInit {
   userSessionStr:any
   commentList:Comments[]=[]
   comment:string=""
+  myCart:any
+  addToCart(){
+      let car={id:this.id,username:this.userSessionStr.username}
 
+      this.cart.AddCart(car).subscribe(data =>{
+        console.log("post cart",data);
+      });
+  }
+  removeFromCart(){
+    this.cart.deleteById(this.id).subscribe(
+      (data)=>{
+        console.log("delete cart",data)
+      },
+      err=>console.log("err",err)
+    );
+  }
+  navigateCart(){
+    this.routes.navigate(['/cart'])
+  }
   comFo = new FormGroup({
     comment: new FormControl("", [Validators.required]),
   });
-  constructor(private commentsService: CommentsService ,private myRoute: ActivatedRoute,private prodS:ProductsService) {
+  constructor(private routes:Router,private commentsService: CommentsService ,private myRoute: ActivatedRoute,private prodS:ProductsService,private cart:CartService) {
     console.log('data');
     this.id=myRoute.snapshot.params['id'];
 

@@ -1,0 +1,90 @@
+  <div class="invoice-box my-5">
+    <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+        <td colspan="2">
+          <table>
+            <tr>
+              <td class="title">
+                <h1>Invoice</h1>
+              </td>
+
+              <td>
+                Invoice #: 123<br>
+                Created: {{currentDate | date:"yyyy-MM-dd"}}<br>
+                At: {{currentDate | date:"mediumTime"}}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr class="information">
+        <td colspan="2">
+          <table>
+            <tr>
+              <td>
+                Your Company, Inc.<br>
+                12345 Sunny Road<br>
+                Sunnyville, CA 12345
+              </td>
+
+              <td>
+                Customer Name<br>
+                Customer Address<br>
+                City, State ZIP
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr class="heading">
+        <td>
+          Payment Method
+        </td>
+
+        <td>
+          Check #
+        </td>
+      </tr>
+
+      <tr class="details">
+        <td>
+          Check
+        </td>
+
+        <td>
+          1000
+        </td>
+      </tr>
+
+      <tr class="heading">
+        <td>
+          Item
+        </td>
+
+        <td>
+          Price
+        </td>
+      </tr>
+
+      <tr class="item" *ngFor="let p of list">
+        <td>
+          {{p[0].title}}
+        </td>
+
+        <td>
+          {{p[0].price}}
+        </td>
+      </tr>
+
+      <tr class="total">
+        <td></td>
+
+        <td>
+          Total: {{totalPrice | currency }}
+        </td>
+      </tr>
+    </table>
+  </div>
+

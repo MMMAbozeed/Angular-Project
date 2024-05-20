@@ -17,3 +17,13 @@ svg{
 .bi-cart-plus-fill,.bi-chat-dots-fill{
   color: green;
 }
+div{
+  align-items: center;
+}
+.price{
+position: absolute;
+bottom: 0;
+background-color: red;
+left: 0 ;
+border-radius: 50%;
+}

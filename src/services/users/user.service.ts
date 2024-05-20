@@ -18,6 +18,6 @@ export class UserService {
     return this.http.post(this.DB_URL , user);
   }
   editUser(user:any){
-    return this.http.put(this.DB_URL  + "?id=" +user.id,user)
+    return this.http.put(this.DB_URL  + "/" +user.id,user)
   }
 }

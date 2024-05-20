@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterModule } fr
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnChanges {
   path:any
   userSessionStr:any
   showSetting=false
@@ -60,5 +60,9 @@ export class HeaderComponent implements OnInit {
     this.path = this.myRoute.url
     console.log(this.router.url)
     console.log("path",this.path)
+  }
+  ngOnChanges(){
+    this.loadUserSession()
+
   }
 }
