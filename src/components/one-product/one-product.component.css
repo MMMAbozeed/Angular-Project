@@ -1,0 +1,14 @@
+.card{
+  width: 300px;
+  height: 590px;
+}
+.card:hover{
+  border: 1px solid #458;
+  transform: scale(1.05);
+}
+img{
+  height: 300px;
+}
+.bi-cart-plus-fill{
+  color: green;
+}

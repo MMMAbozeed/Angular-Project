@@ -22,10 +22,18 @@ nav .navbar-brand span{
 
 a{
   cursor: pointer;
+  text-decoration: none;
+}
+a:hover,li:hover{
+  color: white !important;
 }
 .avatar{
-  margin-left:1000px ;
+justify-content: end;
+width: 1070px;
 }
 ul{
   align-items: center;
+}
+.nav-link{
+  width: 70px;
 }

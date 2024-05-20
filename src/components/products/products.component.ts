@@ -6,6 +6,7 @@ import { Iproducts } from '../../interfaces/products/iproducts';
 import { RouterModule } from '@angular/router';
 import { WordsPipe } from "../../pipes/words.pipe";
 import { CartService } from '../../services/cart/cart.service';
+import { OneProductComponent } from '../one-product/one-product.component';
 
 @Component({
     selector: 'app-products',
@@ -13,7 +14,7 @@ import { CartService } from '../../services/cart/cart.service';
     providers: [ProductsService,CartService],
     templateUrl: './products.component.html',
     styleUrl: './products.component.css',
-    imports: [HttpClientModule, CommonModule, RouterModule, WordsPipe]
+    imports: [HttpClientModule, CommonModule, RouterModule, WordsPipe,OneProductComponent]
 })
 export class ProductsComponent implements OnInit {
 CatList:any

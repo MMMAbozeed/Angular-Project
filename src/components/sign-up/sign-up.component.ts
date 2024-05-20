@@ -36,7 +36,7 @@ constructor(private userS:UserService, private router:Router){
     this.clicked=true
     if(this.isValid)
     {
-      let user ={name:this.name,email:this.email,password:this.password,phone:this.phone,img:this.imgUrl,address:this.address}
+      let user ={username:this.name,email:this.email,password:this.password,phone:this.phone,img:this.imgUrl,address:this.address}
       this.userS.AddUser(user).subscribe()
       localStorage.setItem('userSession', JSON.stringify(user));
       this.router.navigate([''])

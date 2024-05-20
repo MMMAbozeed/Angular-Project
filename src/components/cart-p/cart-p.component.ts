@@ -16,6 +16,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class CartPComponent {
 @Input() p:any
+price:any
+changP(val:any){
+  this.price=this.count* +val
+}
 count=1
   userSessionStr: any;
   list:any

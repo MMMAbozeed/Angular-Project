@@ -44,6 +44,7 @@ export class ProductDetailsComponent implements OnInit {
     );
   }
   navigateCart(){
+    this.addToCart()
     this.routes.navigate(['/cart'])
   }
   comFo = new FormGroup({

@@ -19,7 +19,7 @@
           <a (click)="logOut()" class="nav-link"  tabindex="-1" aria-disabled="true">log out</a>
         </li>
         <div *ngIf="isLogged" class="avatar d-flex align-items-center">
-          <h6 class="mx-5">{{userSession.username}}</h6>
+          <h6 class="mx-5"><a routerLink="/setting">{{userSession.username}}</a></h6>
           <img src="{{(imgUrl)?imgUrl:'https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp'}}" alt="avatar" width="65" height="65" class="rounded-circle shadow-1-strong me-3">
         </div>
       </ul>

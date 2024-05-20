@@ -63,9 +63,9 @@ import { DatePipe } from '@angular/common';
   // "productId": 2
   addComment(){
     const now = new Date();
-    const currentTime = now.toLocaleTimeString();
+    // const currentTime = now.toLocaleTimeString();
     console.log("hdaksjhkjahsdkjhsakjdhkjsa",this.userSessionStr,"          ",this.userSessionStr.username)
-    let c={createdAt:currentTime,content:this.comment,userId:this.userSessionStr.id,userName:this.userSessionStr.username,productId:this.id,userImg:this.userSessionStr.img}
+    let c={createdAt:now,content:this.comment,userId:this.userSessionStr.id,userName:this.userSessionStr.username,productId:this.id,userImg:this.userSessionStr.img}
     this.commentsService.AddComment(c).subscribe((data)=>{
       console.log(data)
       console.log("hdaksjhkjahsdkjhsakjdhkjsa",this.userSessionStr.id,"          ",this.userSessionStr.username)

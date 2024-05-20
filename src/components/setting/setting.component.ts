@@ -43,7 +43,7 @@ constructor(private userS:UserService, private router:Router){
         (e)=>{console.log(e)},
       )
       localStorage.setItem('userSession', JSON.stringify(user));
-      // this.router.navigate([''])
+      this.router.navigate([''])
     }
   }
 get isValid()

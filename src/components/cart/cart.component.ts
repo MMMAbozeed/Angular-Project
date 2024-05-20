@@ -32,20 +32,20 @@ export class CartComponent  implements OnInit {
 
   }
   complete(){
-    // this.cartService.GetUserCart(this.userSessionStr.username).subscribe(
-    //   (data)=>{
-    //     this.cart = data
-    //     for(var i=0; i<this.cart.length;i++){
-    //       this.cartService.deleteById(this.cart[i].id).subscribe((product:any)=>{
-    //         this.totalPrice=0
-    //       });
-    //     }
-    //     this.cart=[]
-    //   },
-    //   (err)=>{
-    //     console.log(err);
-    //   }
-    // )
+    this.cartService.GetUserCart(this.userSessionStr.username).subscribe(
+      (data)=>{
+        this.cart = data
+        for(var i=0; i<this.cart.length;i++){
+          this.cartService.deleteById(this.cart[i].id).subscribe((product:any)=>{
+            this.totalPrice=0
+          });
+        }
+        this.cart=[]
+      },
+      (err)=>{
+        console.log(err);
+      }
+    )
     this.myRoute.navigate(['/invoice/'+this.totalPrice])
   }
   cancel()
